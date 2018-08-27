@@ -60,6 +60,7 @@ stencil_step(uniform int x0, uniform int x1,
     }
 }
 
+/*
 static task void
 stencil_step_task(uniform int x0, uniform int x1,
                   uniform int y0, uniform int y1,
@@ -97,7 +98,7 @@ loop_stencil_ispc_tasks(uniform int t0, uniform int t1,
         sync;
     }
 }
-
+*/
 
 export void
 loop_stencil_ispc(uniform int t0, uniform int t1, 
