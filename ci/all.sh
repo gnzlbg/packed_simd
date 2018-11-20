@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 #
 # Performs an operation on all targets
 
 set -ex
 
-: ${1?"The all.sh script requires one argument."}
+: "${1?The all.sh script requires one argument.}"
 
 op=$1
 
@@ -53,12 +53,15 @@ $CMD
 # Check examples/
 for dir in examples/*/
 do
+    (
     dir=${dir%*/}
-    cd ${dir%*/}
+    cd "${dir%*/}" || exit
     $CMD
-    cd -
+    )
 done
 
-cd verify/verify
+(
+cd verify/verify || exit
 $CMD
-cd -
+)
+

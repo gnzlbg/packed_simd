@@ -40,7 +40,7 @@ case "$1" in
     ;;
 
   *)
-    echo "invalid arch: $1"
+    echo "invalid arch: ${1}"
     exit 1
     ;;
 esac;
@@ -56,5 +56,5 @@ echo "yes" | \
 
 echo "no" |
     ./sdk/tools/bin/avdmanager create avd \
-        --name $1 \
+        --name "${1}" \
         --package "system-images;android-24;default;$abi"

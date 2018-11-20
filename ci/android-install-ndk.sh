@@ -24,14 +24,14 @@ case "$1" in
     ;;
 
   *)
-    arch=$1
+    arch="${1}"
     ;;
 esac;
 
 android-ndk-r15b/build/tools/make_standalone_toolchain.py \
         --unified-headers \
-        --install-dir /android/ndk-$1 \
-        --arch $arch \
+        --install-dir /android/ndk-"${1}" \
+        --arch "${arch}" \
         --api 24
 
 rm -rf ./android-ndk-r15b-linux-x86_64.zip ./android-ndk-r15b

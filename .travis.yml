@@ -187,6 +187,10 @@ matrix:
       install: true
       before_script: rustup component add clippy-preview
       script: ci/all.sh clippy
+    - name: "Shellcheck"
+      script:
+        - shellcheck --version
+        - shellcheck ci/*.sh
 
   allow_failures:
     # FIXME: TBD
